@@ -1,0 +1,129 @@
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+  color: white; }
+
+body {
+  background-color: #F5F5F5; }
+
+.m-tool-bar {
+  position: absolute; }
+
+.m-bg-image {
+  width: 100%;
+  height: 320px; }
+
+.m-input-search {
+  font-size: 16px;
+  padding-bottom: 0px;
+  margin-left: 5px; }
+
+.m-panel, .m-panel-sec-template {
+  width: 100%;
+  background-color: white;
+  padding: 10px; }
+
+.m-panel-sec-template {
+  background-color: #607D8B;
+  color: white; }
+
+.m-menu-panel {
+  background-image: url("/content/images/bg/bg-menu.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 60px; }
+
+.transparent {
+  background-color: transparent !important; }
+
+.m-fab-bottom-right {
+  position: fixed !important; }
+
+.white-bg {
+  background-color: white; }
+
+md-list-item i {
+  color: lawngreen; }
+
+.right {
+  float: right; }
+
+a {
+  text-decoration: none; }
+
+.m-footer a {
+  color: #78909C;
+  margin-right: 10px; }
+.m-footer h2 {
+  color: #78909C; }
+
+.m-sidenav-header {
+  background-image: url("/content/images/other/sidenav-header.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  padding: 20px;
+  height: 165px; }
+
+.m-avatar {
+  width: 60px; }
+
+.m-sidenav-item md-icon {
+  font-size: 25px;
+  margin-right: 20px;
+  color: #78909C; }
+.m-sidenav-item span {
+  font-size: 20px; }
+
+.m-template-sort {
+  width: 70px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+  background-color: white; }
+
+.m-template-search {
+  width: 70px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  background-color: white; }
+
+.m-social-button, .m-google-login, .m-facebook-login, .m-twitter-login {
+  z-index: 20;
+  line-height: 48px;
+  min-width: 0;
+  width: 48px;
+  height: 48px;
+  margin: 2px;
+  vertical-align: middle;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  border: 0;
+  background-clip: padding-box;
+  overflow: hidden;
+  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  -webkit-transition-property: background-color, box-shadow, -webkit-transform;
+  transition-property: background-color, box-shadow, -webkit-transform;
+  transition-property: background-color, box-shadow, transform;
+  transition-property: background-color, box-shadow, transform, -webkit-transform;
+  outline: none; }
+
+.m-google-login {
+  background-image: url("/content/images/icons/google-plus.svg");
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+.m-facebook-login {
+  background-image: url("/content/images/icons/facebook.svg");
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+.m-twitter-login {
+  background-image: url("/content/images/icons/twitter.svg");
+  background-repeat: no-repeat;
+  background-size: 100%; }
+
+button[md-ink-ripple] {
+  color: white;
+  position: relative; }
+
+/*# sourceMappingURL=main.css.map */

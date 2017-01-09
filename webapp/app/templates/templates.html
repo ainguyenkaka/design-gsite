@@ -1,0 +1,100 @@
+<section id="templates">
+    <div class="m-menu-panel">   
+    </div>
+    <div layout="row">
+        <md-input-container md-whiteframe="1" class="m-template-sort">
+            <label>Sort by</label>
+            <md-select ng-model="vm.currentSort">
+                <md-option ng-value="name">
+                    name
+                </md-option>
+                <md-option ng-value="date">
+                    date
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <span flex></span>
+        <md-input-container md-whiteframe="1" class="m-template-search">
+            <label>Search by</label>
+            <md-select ng-model="vm.currentSearch">
+               <md-option ng-value="name">
+                    name
+                </md-option>
+                <md-option ng-value="date">
+                    date
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div layout="column" layout-align="center center">
+        <md-card>
+            <img ng-src="/content/images/temp/temp-default.jpg" class="md-card-image" alt="Washed Out">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Basic one</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <span>
+                            The titles of Washed Out's breakthrough song and the first
+                        </span>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="start center">
+                <md-button class="md-icon-button md-raised md-primary">
+                    <i class="material-icons">all_out</i>
+                </md-button>
+                <md-button class="md-icon-button md-raised md-primary">
+                    <i class="material-icons">add</i>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+        <md-card>
+            <img ng-src="/content/images/temp/temp-default.jpg" class="md-card-image" alt="Washed Out">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Latest one</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <span>
+                            The titles of Washed Out's breakthrough song and the first
+                        </span>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="start center">
+                <md-button class="md-icon-button md-raised md-primary">
+                    <i class="material-icons">all_out</i>
+                </md-button>
+                <md-button class="md-icon-button md-raised md-primary">
+                    <i class="material-icons">add</i>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+        <md-card>
+            <img ng-src="/content/images/temp/temp-default.jpg" class="md-card-image" alt="Washed Out">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Beautiful one</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <span>
+                            The titles of Washed Out's breakthrough song and the first
+                        </span>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="start center">
+                <md-button class="md-icon-button md-raised md-primary">
+                    <i class="material-icons">all_out</i>
+                </md-button>
+                <md-button class="md-icon-button md-raised md-primary">
+                    <i class="material-icons">add</i>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</section>
+<section layout="row" layout-padding="">
+
+    <cl-paging flex cl-pages="vm.paging.total" , cl-steps="6" , cl-page-changed="vm.paging.onPageChanged()" , cl-align="center center"
+        , cl-current-page="vm.paging.current"></cl-paging>
+
+</section>
