@@ -5,13 +5,12 @@
         .module('gsiteApp')
         .controller('ToolbarController', ToolbarController);
 
-    ToolbarController.$inject = ['$state', 'Toolbar', '$log','LoginService'];
+    ToolbarController.$inject = ['$state', 'ToolbarService', '$log','LoginService'];
 
-    function ToolbarController($state, Toolbar, $log,LoginService) {
+    function ToolbarController($state, ToolbarService, $log,LoginService) {
         var vm = this;
-        vm.toggleSidenav = Toolbar.toggleSidenav();
+        vm.toggleSidenav = ToolbarService.toggleSidenav();
         vm.showLoginDialog = LoginService.open();
-
     }
 
 })();

@@ -5,11 +5,13 @@
         .module('gsiteApp')
         .controller('SidenavController', SidenavController);
 
-    SidenavController.$inject = ['$state','Toolbar'];
+    SidenavController.$inject = ['$state','ToolbarService','LoginService'];
 
-    function SidenavController($state,Toolbar) {
+    function SidenavController($state,ToolbarService,LoginService) {
         var vm = this;
         
-        vm.toggleSidenav = Toolbar.toggleSidenav();
+        vm.toggleSidenav = ToolbarService.toggleSidenav();
+        vm.showLoginDialog = LoginService.open();
+        
     }
 })();

@@ -3,9 +3,9 @@
 
     angular
         .module('gsiteApp')
-        .provider('Toolbar', Toolbar);
+        .provider('ToolbarService', ToolbarService);
 
-    function Toolbar() {
+    function ToolbarService() {
         this.$get = getService;
 
         getService.$inject = ['$mdSidenav'];

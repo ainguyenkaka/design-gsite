@@ -36,7 +36,7 @@ body {
   background-repeat:no-repeat;
   background-size: 100%;
   width: 100%;
-  height: 60px;
+  height: 56px;
 }
 
 
@@ -98,7 +98,11 @@ a {
   }
   span {
     font-size: 20px;
-  }
+    }
+}
+.m-sidebar-language {
+  height: 20px;
+   font-size: 20px;
 }
 
 .m-template-sort{
@@ -115,18 +119,18 @@ a {
   background-color: white;
 }
 
-.m-social-button {
+.m-button {
     z-index: 20;
     line-height: 48px;
     min-width: 0;
     width: 48px;
     height: 48px;
-    margin: 2px;
+    margin: 5px;
     vertical-align: middle;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
-    border-radius: 50%;
     border: 0;
     background-clip: padding-box;
+    background-color: transparent;
     overflow: hidden;
     -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
     transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
@@ -135,26 +139,51 @@ a {
     transition-property: background-color, box-shadow, transform;
     transition-property: background-color, box-shadow, transform, -webkit-transform;
     outline: none;
-
 }
 
-.m-google-login {
-  @extend .m-social-button;
+.m-google {
+  @extend .m-button;
+  border-radius: 50%;
   background-image:url('/content/images/icons/google-plus.svg');
   background-repeat:no-repeat;
   background-size: 100%;
 }
-.m-facebook-login {
-  @extend .m-social-button;
+.m-facebook {
+  @extend .m-button;
+  border-radius: 50%;
   background-image:url('/content/images/icons/facebook.svg');
   background-repeat:no-repeat;
   background-size: 100%;
 }
-.m-twitter-login {
-  @extend .m-social-button;
+.m-twitter {
+  @extend .m-button;
+  border-radius: 50%;
   background-image:url('/content/images/icons/twitter.svg');
   background-repeat:no-repeat;
   background-size: 100%;
+}
+
+.m-mail {
+  @extend .m-button;
+  border-radius: 50%;
+  background-image:url('/content/images/icons/mail.svg');
+  background-repeat:no-repeat;
+  background-size: 100%;
+}
+
+
+.m-paypal-button {
+  background-image:url('/content/images/icons/paypal.svg');
+  background-repeat:no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+.m-creditcard-button {
+  background-image:url('/content/images/icons/credit-card.svg');
+  background-repeat:no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
 
 // ripple for card
@@ -166,4 +195,49 @@ a {
 button[md-ink-ripple] {
   color: white;
   position: relative;
+}
+
+.blue{
+  color: blue;
+}
+
+.white {
+  color: white;
+}
+
+.red-active {
+  color: #FF5722;
+}
+
+.m-notification-active{
+  color: #FF5722!important;
+}
+
+.m-toast{
+  width: 180px;
+  left: 8px;
+  top: 10px;
+  position: fixed;
+}
+
+.m-toast-error {
+   .md-toast-content {
+      background-color: #FF5722;
+   }
+}
+
+.m-toast-warning {
+   .md-toast-content {
+      background-color: orange;
+   }
+}
+
+.m-bottom-sheet{
+  width: 100%;
+  height: 150px;
+  position: fixed;
+}
+
+.m-1-line {
+  white-space: nowrap;
 }

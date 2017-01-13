@@ -18,70 +18,28 @@
 </p>
 </div>
 <div layout="column" layout-align="center center">
-    <md-card>
-        <img ng-src="/content/images/temp/temp-default.jpg" class="md-card-image" alt="Washed Out">
+    <md-card ng-repeat="item in vm.webTemplates">
+        <img ng-src="content/images/temp/{{item.image}}.jpg" class="md-card-image" alt="Washed Out">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Basic one</span>
+                <span class="md-headline">{{item.name}}</span>
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
             <span>
-                            The titles of Washed Out's breakthrough song and the first
+                 <b class="blue">{{item.price == 0 ? 'Free' : item.price + '.0'}}!</b>
+                            {{item.des}}
                         </span>
         </md-card-content>
         <md-card-actions layout="row" layout-align="start center">
             <md-button class="md-icon-button md-raised md-primary">
-                <i class="material-icons">all_out</i>
+                <i class="material-icons">remove_red_eye</i>
             </md-button>
-            <md-button class="md-icon-button md-raised md-primary">
-                <i class="material-icons">add</i>
-            </md-button>
-        </md-card-actions>
-    </md-card>
-    <md-card>
-        <img ng-src="/content/images/temp/temp-default.jpg" class="md-card-image" alt="Washed Out">
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">Latest one</span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-            <span>
-                            The titles of Washed Out's breakthrough song and the first
-                        </span>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="start center">
-            <md-button class="md-icon-button md-raised md-primary">
-                <i class="material-icons">all_out</i>
-            </md-button>
-            <md-button class="md-icon-button md-raised md-primary">
-                <i class="material-icons">add</i>
+            <md-button  class="md-icon-button md-raised md-primary">
+                <i ui-sref="my-website.new({template_id: item.template_id})" class="material-icons">add</i>
             </md-button>
         </md-card-actions>
     </md-card>
-    <md-card>
-        <img ng-src="/content/images/temp/temp-default.jpg" class="md-card-image" alt="Washed Out">
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">Beautiful one</span>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-            <span>
-                            The titles of Washed Out's breakthrough song and the first
-                        </span>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="start center">
-            <md-button class="md-icon-button md-raised md-primary">
-                <i class="material-icons">all_out</i>
-            </md-button>
-            <md-button class="md-icon-button md-raised md-primary">
-                <i class="material-icons">add</i>
-            </md-button>
-        </md-card-actions>
-    </md-card>
-</div>
 </section>
 <section id="features" layout="column" flex>
     <div class="m-panel-sec-template">

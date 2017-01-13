@@ -12,8 +12,7 @@
             parent: 'app',
             url: '/template?page&sort&search',
             data: {
-                authorities: [],
-                pageTitle: 'gsiteApp.template.home.title'
+                authorities: []
             },
             views: {
                 'content@': {

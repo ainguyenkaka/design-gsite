@@ -5,9 +5,10 @@
         .module('gsiteApp')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope'];
+    LoginController.$inject = ['$scope','LoginService'];
 
-    function LoginController ($scope) {
+    function LoginController ($scope,LoginService) {
         var vm = this;
+        vm.closeLoginDialog = LoginService.close();
     }
 })();

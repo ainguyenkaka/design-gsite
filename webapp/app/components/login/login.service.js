@@ -9,7 +9,8 @@
 
     function LoginService($mdDialog) {
         var service = {
-            open: open
+            open: open,
+            close: close
         };
 
         return service;
@@ -18,12 +19,19 @@
             return function () {
                 return $mdDialog.show({
                     controller: 'LoginController',
+                    controllerAs: 'vm',
                     templateUrl: 'app/components/login/login.html',
                     parent: 'app',
                     targetEvent: null,
                     clickOutsideToClose: true,
                     fullscreen: false
                 });
+            }
+        }
+
+        function close() {
+            return function () {
+                return  $mdDialog.hide();
             }
         }
 

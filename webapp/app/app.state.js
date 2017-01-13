@@ -5,11 +5,10 @@
         .module('gsiteApp')
         .config(stateConfig);
 
-    stateConfig.$inject = ['$stateProvider','$urlRouterProvider'];
+    stateConfig.$inject = ['$stateProvider'];
 
 
-    function stateConfig($stateProvider, $urlRouterProvider) {
-      //  $urlRouterProvider.otherwise('/');
+    function stateConfig($stateProvider) {
         $stateProvider.state('app', {
             abstract: true,
             views: {

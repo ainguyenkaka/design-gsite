@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider.state('support', {
             abstract: true,
-            parent: 'app'
+            parent: 'customer'
         });
     }
 })();
