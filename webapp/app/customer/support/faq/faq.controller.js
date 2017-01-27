@@ -5,9 +5,13 @@
         .module('gsiteApp')
         .controller('FAQController', FAQController);
 
-    FAQController.$inject = ['$scope'];
+    FAQController.$inject = ['$scope','FAQService'];
 
-    function FAQController ($scope) {
+    function FAQController ($scope,FAQService) {
         var vm = this;
+
+        vm.faqs = [];
+
+        vm.faqs = FAQService.all();
     }
 })();

@@ -33,7 +33,7 @@
         </md-card-content>
         <md-card-actions layout="row" layout-align="start center">
             <md-button class="md-icon-button md-raised md-primary">
-                <i class="material-icons">remove_red_eye</i>
+                <i ui-sref="{{item.source}}" class="material-icons">remove_red_eye</i>
             </md-button>
             <md-button  class="md-icon-button md-raised md-primary">
                 <i ui-sref="my-website.new({template_id: item.template_id})" class="material-icons">add</i>
@@ -49,7 +49,7 @@
 </div>
 <div layout="column" layout-align="center">
     <md-content layout="row" class="white-bg">
-        <md-list flex>
+        <md-list flex class="m-feature-list">
             <md-list-item>
                 <i class="material-icons">check_circle</i> &nbsp
                 <p class="md-subhead">View template</p>
@@ -63,7 +63,7 @@
                 <p class="md-subhead">Give website</p>
             </md-list-item>
         </md-list>
-        <md-list class="md-dense" flex>
+        <md-list flex class="m-feature-list">
             <md-list-item>
                 <i class="material-icons">check_circle</i> &nbsp
                 <p class="md-subhead"> Customization</p>

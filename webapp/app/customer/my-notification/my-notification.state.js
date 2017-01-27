@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -29,12 +29,20 @@
                 authorities: [],
                 pageTitle: 'gsiteApp.template.home.title'
             },
+            params: {
+                id: null
+            },
             views: {
                 'content@': {
                     templateUrl: 'app/customer/my-notification/my-notification-view.html',
                     controller: 'MyNotificationViewController',
                     controllerAs: 'vm'
                 }
+            },
+            resolve: {
+                entity: ['$stateParams', 'MyNotificationService', function ($stateParams, MyNotificationService) {
+                    return MyNotificationService.get($stateParams.id);
+                }]
             }
         }).state('my-notification.delete', {
             parent: 'my-notification',
@@ -45,8 +53,9 @@
             params: {
                 template_id: null
             },
-            onEnter: ['$stateParams', '$state', function ($stateParams, $state) {
-                 $state.go('my-notification', null, { reload: 'my-notification' });
+            onEnter: ['$stateParams', '$state','MyNotificationService', function ($stateParams, $state,MyNotificationService) {
+                MyNotificationService.del($stateParams.id);
+                $state.go('my-notification', null, { reload: 'my-notification' });
             }]
         });
     }

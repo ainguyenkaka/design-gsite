@@ -1,0 +1,47 @@
+<section>
+    <div layout-fill class="white-bg">
+        <img class="m-home-avatar" ng-src="content/images/avatars/{{vm.homepage.avatar}}.jpg" />
+        <div layout="column" layout-padding layout-align="center center">
+            <span class="md-title">{{vm.homepage.name}} </span>
+            <span class="md-subtitle">{{vm.homepage.fullName}}</span>
+        </div>
+    </div>
+</section>
+<section>
+    <div layout="column">
+        <p class="md-title" align="center">
+            Favorite Songs
+            <md-icon aria-label="keyboard_arrow_down" class="material-icons"> keyboard_arrow_down </md-icon>
+        </p>
+        <div class="white-bg" ng-repeat="item in vm.songs">
+            <div layout="row" layout-padding layout-align="center center">
+                <b class="m-1-line" flex>{{ item.title }}</b>
+                <span class="m-1-line" flex="45">{{ item.artist }}</span>
+                <md-button aria-label="button-label" class="md-icon-button" ng-click="vm.playSongAt($index)">
+                    <md-icon class="material-icons">play_arrow</md-icon>
+                </md-button>
+            </div>
+            <md-divider></md-divider>
+        </div>
+    </div>
+</section>
+<section>
+    <div layout="column">
+        <p class="md-title" align="center">
+            Beautiful Photos
+            <md-icon aria-label="keyboard_arrow_down" class="material-icons"> keyboard_arrow_down </md-icon>
+        </p>
+        <div class="white-bg" ng-repeat="item in vm.photos">
+            <div layout="column" layout-padding layout-align="center center">
+                <img class="m-home-photo" ng-src="{{item.url}}" />
+                <div>
+                    <md-button aria-label="button-label" class="md-icon-button" ng-click="vm.viewPhoto(item)">
+                        <md-icon class="material-icons">remove_red_eye</md-icon>
+                    </md-button>
+                    <span>{{item.des}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

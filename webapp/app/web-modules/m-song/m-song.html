@@ -1,0 +1,10 @@
+<div class="white-bg" ng-repeat="item in vm.song.items">
+    <div layout="row" layout-padding layout-align="center center">
+        <b class="m-1-line" flex>{{ item.title }}</b>
+        <span class="m-1-line" flex="45">{{ item.artist }}</span>
+        <md-button aria-label="button-label" class="md-icon-button"  ng-click="vm.playAt($index)">
+            <md-icon class="material-icons">play_arrow</md-icon>
+        </md-button>
+    </div>
+    <md-divider></md-divider>
+</div>

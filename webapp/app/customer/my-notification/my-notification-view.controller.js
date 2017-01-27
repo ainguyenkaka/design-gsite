@@ -5,16 +5,12 @@
         .module('gsiteApp')
         .controller('MyNotificationViewController', MyNotificationViewController);
 
-    MyNotificationViewController.$inject = ['$scope'];
+    MyNotificationViewController.$inject = ['$scope','entity'];
 
-    function MyNotificationViewController($scope) {
+    function MyNotificationViewController($scope, entity) {
         var vm = this;
-
-        vm.notification = {
-            id: 'sad12sa1',
-            title: 'Best off',
-            content: '3 days for free templates. Check it out immediately',
-            isRead: false
-        }
+        
+        vm.notification = entity;
+        vm.notification.isRead = true;
     }
 })();

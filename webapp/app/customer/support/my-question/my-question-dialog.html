@@ -4,7 +4,7 @@
         <form name="Form" layout-fill>
             <md-input-container layout-fill>
                 <label>? Content</label>
-                <input type="text" name="content" ng-minlength="8" ng-model="vm.question.content" required/>
+                <input type="text" name="content" ng-minlength="8" ng-model="vm.question.title" required/>
                 <div ng-messages="Form.content.$error">
                     <div ng-message="required">This is required. more than 8 characters</div>
                 </div>

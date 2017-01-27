@@ -4,30 +4,18 @@
     <md-list class="md-dense m-panel" flex md-whiteframe="1">
         <h2>Frequent asked questions</h2>
         <md-divider></md-divider>
-        <md-list-item class="md-3-line">
+        <md-list-item class="md-3-line" ng-repeat="item in vm.faqs">
             <div class="md-list-item-text">
                 <p>
                     <md-icon class="material-icons">help</md-icon>
-                    <span class="md-subhead">What is the best feature ?</span>
+                    <span class="md-subhead">{{item.title}}</span>
                 </p>
                 <p>
                     <md-icon class="material-icons">question_answer</md-icon>
-                    <span class="md-title">Web customization</span>
+                    <span class="md-title">{{item.answer}}</span>
                 </p>
             </div>
             <md-divider></md-divider>
-        </md-list-item>
-         <md-list-item class="md-3-line">
-            <div class="md-list-item-text">
-                <p>
-                    <md-icon class="material-icons">help</md-icon>
-                    <span class="md-subhead">How I can create beautiful website ?</span>
-                </p>
-                <p>
-                    <md-icon class="material-icons">question_answer</md-icon>
-                    <span class="md-title">Just get the beatiful template</span>
-                </p>
-            </div>
         </md-list-item>
     </md-list>
 </div>

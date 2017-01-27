@@ -5,30 +5,28 @@
         .module('gsiteApp')
         .controller('MyFeedbackDialogController', MyFeedbackDialogController);
 
-    MyFeedbackDialogController.$inject = ['$scope','$mdDialog','AlertService'];
+    MyFeedbackDialogController.$inject = ['$scope','$mdDialog','AlertService','MyFeedbackService','MyFeedbackOptionService'];
 
-    function MyFeedbackDialogController ($scope,$mdDialog,AlertService) {
+    function MyFeedbackDialogController ($scope,$mdDialog,AlertService,MyFeedbackService,MyFeedbackOptionService) {
         var vm = this;
+        vm.feedback = {
+            title: null,
+            content: null
+        };
+
          vm.closeDialog = closeDialog;
         vm.submit = submit;
         vm.feedbackOptions = [];
 
-        vm.feedbackOptions = [
-            {
-                title: 'Performance',
-                options: ['It is quite fast','Sometime slow','It is okay']
-            },
-             {
-                title: 'Experience',
-                options: ['It is quite convenient','Sometime it is laggy','It is okay']
-            }
-        ];
+        vm.feedbackOptions = MyFeedbackOptionService.all();
        
        function closeDialog() {
            $mdDialog.cancel();
        }
 
        function submit() {
+           vm.feedback.title = vm.feedbackOptions[vm.foIndex].title;
+           MyFeedbackService.add(vm.feedback);
            AlertService.success('Send successfully!');
            $mdDialog.hide();
        }

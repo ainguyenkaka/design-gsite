@@ -54,7 +54,7 @@ body {
   background-color: white; 
 }
 
-md-list-item {
+.m-feature-list {
   i {
     color: lawngreen;
   }
@@ -205,6 +205,10 @@ button[md-ink-ripple] {
   color: white;
 }
 
+.black {
+  color: black;
+}
+
 .red-active {
   color: #FF5722;
 }
@@ -240,4 +244,58 @@ button[md-ink-ripple] {
 
 .m-1-line {
   white-space: nowrap;
+}
+
+.m-color-picker {
+  height: 65px;
+}
+
+// Template css
+
+.m-home-avatar {
+  width: 100%;
+  height: 200px;
+}
+
+.m-home-photo {
+   width: 100%;
+   height: 180px;
+}
+.m-template-footer {
+  a {
+     margin-right: 10px;
+  }
+}
+
+.m-main-avatar{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.m-info-panel {
+  padding-left: 20px;
+}
+
+.m-photo-dialog {
+    padding: 5px;
+}
+
+.m-main-photo {
+   width: 100%;
+    height: 200px;
+}
+
+.m-audio-player {
+    position: fixed;
+    bottom: 0px;
+    color: white;
+    background-color: blue;
+    width:100%;
+    text-align: center;
+}
+
+// audio player
+.m-progress{
+  width: 100%;
 }

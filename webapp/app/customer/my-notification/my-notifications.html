@@ -2,7 +2,7 @@
 </div>
 <div layout-padding>
     <md-list class="m-panel" flex md-whiteframe="1">
-        <md-list-item class="md-2-line" ng-click="null" ui-sref="my-notification.view" ng-repeat="item in vm.notifications">
+        <md-list-item class="md-2-line" ng-click="null"  ng-repeat="item in vm.notifications" ui-sref="my-notification.view({id: item.id})">
             <div layout="row" class="md-list-item-text">
                 <md-icon class="material-icons {{item.isRead ? '' : 'red-active'}}" flex="15">{{item.isRead ? 'notifications' : 'notifications_active'}}</md-icon>
                 <div flex>

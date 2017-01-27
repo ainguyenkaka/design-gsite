@@ -22,6 +22,11 @@
                     controller: 'ToolbarController',
                     controllerAs: 'vm'
                 },
+                'quicktool@': {
+                    templateUrl: 'app/layouts/quicktool/quicktool.html',
+                    controller: 'QuickToolController',
+                    controllerAs: 'vm'
+                },
                 'footer@': {
                     templateUrl: 'app/layouts/footer/footer.html',
                     controller: 'FooterController',

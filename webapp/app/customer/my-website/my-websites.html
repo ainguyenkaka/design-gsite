@@ -13,11 +13,11 @@
                 <span>{{item.des}}</span>
             </md-card-content>
             <md-card-actions layout="row" layout-align="start center">
-                <md-button ng-click="vm.testToast()" class="md-icon-button md-raised md-primary">
-                    <i class="material-icons">remove_red_eye</i>
+                <md-button class="md-icon-button md-raised md-primary">
+                    <i ui-sref="my-website-view({website: item})" class="material-icons">remove_red_eye</i>
                 </md-button>
                 <md-button class="md-icon-button md-raised md-primary">
-                    <i class="material-icons">edit</i>
+                    <i ui-sref="my-website.customize({id: item.id})" class="material-icons">edit</i>
                 </md-button>
                  <md-button  class="md-icon-button md-raised md-primary">
                     <i ui-sref="my-website.share({id: item.id})" class="material-icons">share</i>

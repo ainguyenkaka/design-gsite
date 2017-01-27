@@ -1,0 +1,11 @@
+<div class="white-bg" ng-repeat="item in vm.photo.items">
+    <div layout-padding layout-align="center center">
+        <img class="m-home-photo" ng-src="{{item.url}}" />
+        <div>
+            <md-button aria-label="button-label" class="md-icon-button view-photo" ng-click="vm.view(item)">
+                <md-icon class="material-icons">remove_red_eye</md-icon>
+            </md-button>
+            <span>{{item.des}}</span>
+        </div>
+    </div>
+</div>

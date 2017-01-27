@@ -5,34 +5,15 @@
         .module('gsiteApp')
         .controller('MyWebsiteController', MyWebsiteController);
 
-    MyWebsiteController.$inject = ['$scope','AlertService'];
+    MyWebsiteController.$inject = ['$scope', 'AlertService', 'MyWebsiteService'];
 
-    function MyWebsiteController($scope,AlertService) {
+    function MyWebsiteController($scope, AlertService, MyWebsiteService) {
         var vm = this;
         vm.currentPage = 0;
         vm.websites = [];
-        vm.testToast = testToast;
 
-        vm.websites = [
-            {
-                id: 'sas42sa',
-                name: 'The first',
-                des: 'The titles of Washed Out breakthrough song and the first',
-                image: 'temp-default'
-            },
-            {
-                id: 'sas42sa',
-                name: 'My Story',
-                des: 'The titles of Washed Out breakthrough song and the first',
-                image: 'temp-default'
-            },
-            {
-                id: 'sas42sa',
-                name: 'Book Store',
-                des: 'The titles of Washed Out breakthrough song and the first',
-                image: 'temp-default'
-            }
-        ];
+        vm.websites = MyWebsiteService.all();
+
         // paging
         vm.paging = {
             total: 3,
@@ -42,12 +23,6 @@
 
         function loadPages() {
             vm.currentPage = vm.paging.current;
-        }
-
-        // test toast
-
-        function testToast() {
-            AlertService.info("Just view!");
         }
 
 

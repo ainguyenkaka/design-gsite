@@ -13,8 +13,8 @@
             </md-input-container>
             <md-input-container layout-fill>
                 <label>Template</label>
-                <md-select ng-model="vm.website.template_id" required>
-                    <md-option value="basic">Basic one</md-option>
+                <md-select ng-model="vm.website.template" required>
+                    <md-option ng-repeat="item in vm.templates" value="{{item.source}}">{{item.name}}</md-option>
                 </md-select>
             </md-input-container>
             <p></p>

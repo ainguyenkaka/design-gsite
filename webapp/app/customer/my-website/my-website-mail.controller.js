@@ -5,16 +5,17 @@
         .module('gsiteApp')
         .controller('MyWebsiteMailController', MyWebsiteMailController);
 
-    MyWebsiteMailController.$inject = ['$scope','AlertService'];
+    MyWebsiteMailController.$inject = ['$scope','AlertService','entity'];
 
-    function MyWebsiteMailController ($scope,AlertService) {
+    function MyWebsiteMailController ($scope,AlertService, entity) {
         var vm = this;
-
+        
+        vm.website = entity;
         vm.emails = [];
         vm.sendEmail = sendEmail;
         vm.deleteEmail = deleteEmail;
 
-        vm.emails = ['johnterry@gmail.com','linda@gmail.com'];
+        vm.emails = vm.website.sharedUsers;
 
         function sendEmail(email) {
             if(getIndex(email) < 0){

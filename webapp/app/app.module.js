@@ -5,6 +5,9 @@
         .module('gsiteApp', [
             'ngMaterial',
             'ui.router',
-            'cl.paging'
+            'cl.paging',
+            'mdColorPicker',
+            'ngFileUpload',
+            'ngAudio'
         ]);
 })();

@@ -9,6 +9,7 @@
     <!--<base href="/">-->
 
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/md-color-picker/dist/mdColorPicker.min.css">
     <link rel="stylesheet" href="content/css/main.css">
 </head>
 
@@ -17,42 +18,7 @@
         <div ui-view="toolbar" ng-cloak></div>
         <div ui-view="sidenav" ng-cloak></div>
     </header>
-    <div>
-        <md-fab-speed-dial md-direction="up" class="md-scale md-fab-bottom-right m-fab-bottom-right">
-            <md-fab-trigger>
-                <md-button aria-label="menu" class="md-fab md-warn">
-                    <md-icon class="material-icons">add</md-icon>
-                </md-button>
-            </md-fab-trigger>
-
-            <md-fab-actions>
-                <div>
-                    <md-button ui-sref="my-website.new" class="md-fab md-raised md-mini md-primary">
-                        <md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
-                            Website
-                        </md-tooltip>
-                        <md-icon class="material-icons">web</md-icon>
-                    </md-button>
-                </div>
-                <div>
-                    <md-button ui-sref="my-question.new" class="md-fab md-raised md-mini md-primary">
-                        <md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
-                            Question
-                        </md-tooltip>
-                        <md-icon class="material-icons"> question_answer </md-icon>
-                    </md-button>
-                </div>
-                <div>
-                    <md-button ui-sref="my-feedback.new" class="md-fab md-raised md-mini md-primary">
-                        <md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
-                            Feedback
-                        </md-tooltip>
-                        <md-icon class="material-icons"> feedback </md-icon>
-                    </md-button>
-                </div>
-            </md-fab-actions>
-        </md-fab-speed-dial>
-    </div>
+    <div ui-view="quicktool" ng-cloak></div>
 
     <div id="content" ui-view="content">
 
@@ -67,7 +33,12 @@
     <script src="bower_components/angular-material/angular-material.js"></script>
 
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
     <script src="bower_components/material-angular-paging/build/dist.min.js"></script>
+    <script src="bower_components/tinycolor/dist/tinycolor-min.js"></script>
+    <script src="bower_components/md-color-picker/dist/mdColorPicker.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="bower_components/angular-audio/app/angular.audio.js"></script>
     <!--App-->
     <script src="app/app.module.js"></script>
 
@@ -78,6 +49,7 @@
     <script src="app/components/login/login.service.js"></script>
 
     <script src="app/layouts/sidenav/sidenav.controller.js"></script>
+    <script src="app/layouts/quicktool/quicktool.controller.js"></script>
     <script src="app/layouts/toolbar/toolbar.service.js"></script>
     <script src="app/layouts/toolbar/toolbar.controller.js"></script>
     <script src="app/layouts/footer/footer.controller.js"></script>
@@ -104,30 +76,42 @@
     <script src="app/account/password/password.state.js"></script>
     <script src="app/account/password/password.controller.js"></script>
 
+    <script src="app/templates/template.service.js"></script>
     <script src="app/templates/template.state.js"></script>
     <script src="app/templates/template.controller.js"></script>
 
+    <script src="app/templates/basic-template/basic-template.state.js"></script>
+    <script src="app/templates/basic-template/basic-template.controller.js"></script>
+
     <script src="app/customer/customer.state.js"></script>
 
+    <script src="app/customer/my-website/my-website.service.js"></script>
     <script src="app/customer/my-website/my-website.state.js"></script>
     <script src="app/customer/my-website/my-website.controller.js"></script>
     <script src="app/customer/my-website/my-website-dialog.controller.js"></script>
     <script src="app/customer/my-website/my-website-share.controller.js"></script>
     <script src="app/customer/my-website/my-website-mail.controller.js"></script>
+    <script src="app/customer/my-website/my-website-custom.controller.js"></script>
+    <script src="app/customer/my-website/my-website-view.controller.js"></script>
 
     <script src="app/customer/support/support.state.js"></script>
 
+    <script src="app/customer/support/faq/faq.service.js"></script>
     <script src="app/customer/support/faq/faq.state.js"></script>
     <script src="app/customer/support/faq/faq.controller.js"></script>
 
+    <script src="app/customer/support/my-question/my-question.service.js"></script>
     <script src="app/customer/support/my-question/my-question.state.js"></script>
     <script src="app/customer/support/my-question/my-question.controller.js"></script>
     <script src="app/customer/support/my-question/my-question-dialog.controller.js"></script>
 
+    <script src="app/customer/support/my-feedback/my-feedback-option.service.js"></script>
+    <script src="app/customer/support/my-feedback/my-feedback.service.js"></script>
     <script src="app/customer/support/my-feedback/my-feedback.state.js"></script>
     <script src="app/customer/support/my-feedback/my-feedback.controller.js"></script>
     <script src="app/customer/support/my-feedback/my-feedback-dialog.controller.js"></script>
 
+    <script src="app/customer/my-notification/my-notification.service.js"></script>
     <script src="app/customer/my-notification/my-notification.state.js"></script>
     <script src="app/customer/my-notification/my-notification.controller.js"></script>
     <script src="app/customer/my-notification/my-notification-view.controller.js"></script>
@@ -136,6 +120,30 @@
 
     <script src="app/payment/website-payment/website-payment.state.js"></script>
     <script src="app/payment/website-payment/website-payment.controller.js"></script>
+
+    <script src="app/web-modules/m-toolbar/m-toolbar.controller.js"></script>
+    <script src="app/web-modules/m-toolbar/m-toolbar-dialog.controller.js"></script>
+    <script src="app/web-modules/m-sidenav/m-sidenav.controller.js"></script>
+    <script src="app/web-modules/m-sidenav/m-sidenav-dialog.controller.js"></script>
+    <script src="app/web-modules/m-sidenav-list/m-sidenav-list.controller.js"></script>
+    <script src="app/web-modules/m-sidenav-list/m-sidenav-list-dialog.controller.js"></script>
+    <script src="app/web-modules/m-home/m-home.controller.js"></script>
+    <script src="app/web-modules/m-home/m-home-dialog.controller.js"></script>
+    <script src="app/web-modules/m-footer/m-footer.controller.js"></script>
+    <script src="app/web-modules/m-footer/m-footer-dialog.controller.js"></script>
+    <script src="app/web-modules/m-audio-player/m-audio-player.controller.js"></script>
+
+    <script src="app/web-modules/m-basic-info/m-basic-info.controller.js"></script>
+    <script src="app/web-modules/m-basic-info/m-basic-info-dialog.controller.js"></script>
+
+    <script src="app/web-modules/m-photo/m-photo.controller.js"></script>
+    <script src="app/web-modules/m-photo/m-photo-dialog.controller.js"></script>
+    <script src="app/web-modules/m-photo/m-photo.service.js"></script>
+
+    <script src="app/web-modules/m-song/m-song.controller.js"></script>
+    <script src="app/web-modules/m-song/m-song.service.js"></script>
+    <script src="app/web-modules/m-song/m-song-dialog.controller.js"></script>
+
 </body>
 
 </html>
