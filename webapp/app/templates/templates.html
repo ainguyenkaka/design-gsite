@@ -1,8 +1,8 @@
-<div class="m-menu-panel">
+<div class="m-common-toolbar">
 </div>
-<section id="templates">
+<section id="templates" class="m-templates">
     <div layout="row">
-        <md-input-container md-whiteframe="1" class="m-template-sort">
+        <md-input-container md-whiteframe="1" class="m-templates-sort-btn">
             <label>Sort by</label>
             <md-select ng-model="vm.currentSort">
                 <md-option ng-value="name">
@@ -14,7 +14,7 @@
             </md-select>
         </md-input-container>
         <span flex></span>
-        <md-input-container md-whiteframe="1" class="m-template-search">
+        <md-input-container md-whiteframe="1" class="m-templates-search-btn">
             <label>Search by</label>
             <md-select ng-model="vm.currentSearch">
                 <md-option ng-value="name">
@@ -27,33 +27,29 @@
         </md-input-container>
     </div>
     <div layout="column" layout-align="center center">
-        <md-card ng-repeat="item in vm.webTemplates">
-            <img ng-src="content/images/temp/{{item.image}}.jpg" class="md-card-image" alt="Washed Out">
-            <md-card-title>
-                <md-card-title-text>
-                    <span class="md-headline">{{item.name}}</span>
-                </md-card-title-text>
-            </md-card-title>
-            <md-card-content>
-                <span>
+        <md-card class="m-templates-card" ng-repeat="item in vm.webTemplates" layout-gt-sm="row">
+            <img flex ng-src="content/images/temp/{{item.image}}.jpg" class="md-card-image" alt="Washed Out">
+            <div flex>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{item.name}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <span>
                  <b class="blue">{{item.price == 0 ? 'Free' : item.price + '.0'}}!</b>
                             {{item.des}}
                         </span>
-            </md-card-content>
-            <md-card-actions layout="row" layout-align="start center">
-                <md-button class="md-icon-button md-raised md-primary">
-                    <i ui-sref="basic-template" class="material-icons">remove_red_eye</i>
-                </md-button>
-                <md-button class="md-icon-button md-raised md-primary">
-                    <i ui-sref="my-website.new({template_id: item.template_id})" class="material-icons">add</i>
-                </md-button>
-            </md-card-actions>
+                </md-card-content>
+                <div class="m-card-actions" layout="row" layout-align="start center">
+                    <md-button ui-sref="{{item.source}}" class="md-icon-button md-raised md-primary">
+                        <i class="material-icons">remove_red_eye</i>
+                    </md-button>
+                    <md-button class="md-icon-button md-raised md-primary">
+                        <i ui-sref="my-website.new({template_id: item.template_id})" class="material-icons">add</i>
+                    </md-button>
+                </div>
+            </div>
         </md-card>
     </div>
-</section>
-<section layout="row" layout-padding="">
-
-    <cl-paging flex cl-pages="vm.paging.total" , cl-steps="6" , cl-page-changed="vm.paging.onPageChanged()" , cl-align="center center"
-        , cl-current-page="vm.paging.current"></cl-paging>
-
 </section>

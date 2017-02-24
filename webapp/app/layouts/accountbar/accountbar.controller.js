@@ -9,6 +9,7 @@
 
     function AccountBarController($state) {
         var vm = this;
-        
+        vm.currentState = $state.current.name;
+
     }
 })();

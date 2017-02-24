@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -16,7 +16,7 @@
                 pageTitle: 'gsiteApp.template.home.title'
             },
             views: {
-                'content@': {
+                'support-content@support': {
                     templateUrl: 'app/customer/support/my-question/my-questions.html',
                     controller: 'MyQuestionController',
                     controllerAs: 'vm'
@@ -31,7 +31,7 @@
             params: {
                 template_id: null
             },
-            onEnter: ['$state','$mdDialog', function ($state,$mdDialog) {
+            onEnter: ['$state', '$mdDialog', function ($state, $mdDialog) {
                 $mdDialog.show({
                     templateUrl: 'app/customer/support/my-question/my-question-dialog.html',
                     controller: 'MyQuestionDialogController',
@@ -43,9 +43,11 @@
                 }).then(function (answer) {
                     //$state.go('my-question', null, {reload: 'my-question'});
                 }, function () {
-                    $state.go('my-question', null, {reload: 'my-question'});
+                    $state.go('my-question', null, {
+                        reload: 'my-question'
+                    });
                 });
-                 }]
+            }]
         });
     }
 })();

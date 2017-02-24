@@ -5,10 +5,11 @@
         .module('gsiteApp')
         .controller('MHomeController', MHomeController);
 
-    MHomeController.$inject = ['$state', 'entity', 'song', 'photo', 'MPhotoService', 'MSongService'];
+    MHomeController.$inject = ['$state','$window','entity', 'song', 'photo', 'MPhotoService', 'MSongService'];
 
-    function MHomeController($state, entity, song, photo, MPhotoService, MSongService) {
+    function MHomeController($state, $window , entity, song, photo, MPhotoService, MSongService) {
         var vm = this;
+        vm.homeState = $state.current.name;
 
         vm.homepage = entity;
         if (vm.homepage == null)
@@ -18,6 +19,7 @@
 
         vm.viewPhoto = viewPhoto;
         vm.playSongAt = playSongAt;
+        vm.downloadSongAt = downloadSongAt;
 
         function loadCustom() {
             vm.songs = song.items;
@@ -48,42 +50,29 @@
                 {
                     title: 'Happy',
                     artist: 'Pharrell Williams',
-                    url: 'content/media/songs/Happy.mp3'
+                    url: 'content/media/songs/Happy.mp3',
+                    length: '3:00',
+                    date: '2017-01-12'
                 },
                 {
                     title: 'Paris',
                     artist: 'The Chainsmokers',
-                    url: 'content/media/songs/Paris.mp3'
+                    url: 'content/media/songs/Paris.mp3',
+                    length: '3:15',
+                    date: '2017-01-15'
                 },
                 {
                     title: 'Shape of You',
                     artist: 'Ed Sheeran',
-                    url: 'content/media/songs/Shape-of-You.mp3'
+                    url: 'content/media/songs/Shape-of-You.mp3',
+                    length: '2:45',
+                    date: '2016-09-01'
                 }
             ];
 
             MSongService.loadSongList(vm.songs);
 
-            vm.videos = [
-                {
-                    title: 'Kaka has hat-trick',
-                    des: 'In the match Real vs MU. Kaka has three goals',
-                    time: '10:00',
-                    youtubeId: 'DEDXUd1EFTM'
-                },
-                {
-                    title: 'Kaka had fought as a hero',
-                    des: 'In the match Real vs Barca. Kaka became a captain who are hero',
-                    time: '05:00',
-                    youtubeId: 'DEDXUd1EFTM'
-                },
-                {
-                    title: 'Who can be just good as Kaka',
-                    des: 'In the match Real vs MU. Kaka has three goals',
-                    time: '11:20',
-                    youtubeId: 'DEDXUd1EFTM'
-                }
-            ];
+           
 
             vm.homepage = {
                 name: 'Kaká',
@@ -100,6 +89,12 @@
         function playSongAt(index) {
             MSongService.loadSongAt(index);
             MSongService.play();
+        }
+
+        function downloadSongAt(index) {
+            var song = vm.songs[index];
+            var songUrl = 'http://' + $window.location.host + '/' + song.url;
+            $window.open(songUrl, '_blank');
         }
     }
 })();

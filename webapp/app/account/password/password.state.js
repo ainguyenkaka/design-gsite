@@ -16,7 +16,7 @@
                 pageTitle: 'password.title'
             },
             views: {
-                'content@': {
+                'account-content@account': {
                     templateUrl: 'app/account/password/password.html',
                     controller: 'PasswordController',
                     controllerAs: 'vm'

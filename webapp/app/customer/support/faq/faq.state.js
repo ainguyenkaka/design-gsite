@@ -9,14 +9,14 @@
 
     function stateConfig($stateProvider) {
         $stateProvider.state('faq', {
-            parent: 'app',
+            parent: 'support',
             url: '/faq',
             data: {
                 authorities: [],
                 pageTitle: 'gsiteApp.template.home.title'
             },
             views: {
-                'content@': {
+                'support-content@support': {
                     templateUrl: 'app/customer/support/faq/faqs.html',
                     controller: 'FAQController',
                     controllerAs: 'vm'

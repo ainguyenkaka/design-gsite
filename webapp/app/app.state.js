@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -15,7 +15,7 @@
                 'sidenav@': {
                     templateUrl: 'app/layouts/sidenav/sidenav.html',
                     controller: 'SidenavController',
-                    controllerAs: 'vm'
+                    controllerAs: 'vm',
                 },
                 'toolbar@': {
                     templateUrl: 'app/layouts/toolbar/toolbar.html',
@@ -30,6 +30,11 @@
                 'footer@': {
                     templateUrl: 'app/layouts/footer/footer.html',
                     controller: 'FooterController',
+                    controllerAs: 'vm'
+                },
+                'custom-sidenav@': {
+                    templateUrl: 'app/layouts/custom-sidenav/custom-sidenav.html',
+                    controller: 'CustomSidenavController',
                     controllerAs: 'vm'
                 }
             }

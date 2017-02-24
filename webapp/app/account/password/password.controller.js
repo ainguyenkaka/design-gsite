@@ -5,10 +5,9 @@
         .module('gsiteApp')
         .controller('PasswordController', PasswordController);
 
-    PasswordController.$inject = ['$scope'];
+    PasswordController.$inject = ['$state'];
 
-    function PasswordController ($scope) {
+    function PasswordController ($state) {
         var vm = this;
-        vm.currentState = 'password';
     }
 })();

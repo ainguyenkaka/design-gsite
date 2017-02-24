@@ -10,8 +10,6 @@
     function MyQuestionController ($scope,MyQuestionService) {
         var vm = this;
 
-        vm.currentState = 'my-question';
-
         vm.questions = [];
 
         vm.questions = MyQuestionService.all();

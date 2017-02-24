@@ -19,21 +19,26 @@
         function loadDefault() {
             vm.song = {
                 isEnable: true,
-                items: [
-                    {
+                items: [{
                         title: 'Happy',
                         artist: 'Pharrell Williams',
-                        url: 'content/media/songs/Happy.mp3'
+                        url: 'content/media/songs/Happy.mp3',
+                        length: '3:00',
+                        date: '2017-01-12'
                     },
                     {
                         title: 'Paris',
                         artist: 'The Chainsmokers',
-                        url: 'content/media/songs/Paris.mp3'
+                        url: 'content/media/songs/Paris.mp3',
+                        length: '3:15',
+                        date: '2017-01-15'
                     },
                     {
                         title: 'Shape of You',
                         artist: 'Ed Sheeran',
-                        url: 'content/media/songs/Shape-of-You.mp3'
+                        url: 'content/media/songs/Shape-of-You.mp3',
+                        length: '2:45',
+                        date: '2016-09-01'
                     }
                 ]
             };

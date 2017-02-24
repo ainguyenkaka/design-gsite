@@ -1,5 +1,6 @@
-<md-card>
+<md-card class="m-template-home-dialog">
     <md-card-content>
+        <p hide-xs class="md-title">Edit home page</p>
         <form name="Form" layout-fill>
             <md-input-container layout-fill>
                 <label>Name</label>
@@ -12,7 +13,7 @@
             <md-input-container layout-fill layout="row" layout-align="left center" >
                  <button type="button" class="button md-button md-primary" ngf-select="vm.upload($file)" ng-model="vm.mainImage" name="mainAvatar" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB"
                     ngf-min-height="100" >Main image</button>
-                <img class="m-main-avatar"  ngf-thumbnail="vm.mainImage || 'content/images/avatars/kaka.jpg'">
+                <img ngf-thumbnail="vm.mainImage || 'content/images/avatars/kaka.jpg'">
             </md-input-container>
         </form>
     </md-card-content>

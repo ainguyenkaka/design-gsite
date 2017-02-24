@@ -19,8 +19,8 @@
         vm.icons = ['home','library_music','music_note', 'photo_library','photo'];
 
         function submit() {
-            if(getIndex(vm.choice) < 0)
-            vm.list.choices.push(vm.choice);
+            if (getIndex(vm.choice) < 0)
+                vm.list.choices.push(vm.choice);
         }
 
         function getIndex(choice){

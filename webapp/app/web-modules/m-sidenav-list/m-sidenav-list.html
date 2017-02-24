@@ -1,4 +1,4 @@
-<md-list>
+<md-list class="m-template-sidenav-list">
     <md-list-item class="md-2-line" ui-sref="{{vm.homeState}}" ng-click="vm.toggleLeft()">
         <i class="material-icons" flex="15">home</i>
         <div class="md-list-item-text" layout="column" flex>
@@ -15,7 +15,7 @@
     </md-list-item>
     <md-list-item class="md-2-line">
         <div layout="row" layout-fill>
-            <md-icon class="material-icons black" flex="15">language</md-icon>
+            <md-icon class="material-icons" flex="15">language</md-icon>
             <md-select ng-model="vm.lang" aria-label="Language">
                 <md-option value="en" ng-selected="true">English</md-option>
                 <md-option value="vi">Vietnamese</md-option>

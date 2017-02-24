@@ -16,7 +16,7 @@
                 pageTitle: 'gsiteApp.template.home.title'
             },
             views: {
-                'content@': {
+                'support-content@support': {
                     templateUrl: 'app/customer/support/my-feedback/my-feedbacks.html',
                     controller: 'MyFeedbackController',
                     controllerAs: 'vm'

@@ -20,33 +20,37 @@
         function buildToggler(componentId) {
             return function () {
                 $mdSidenav(componentId).toggle();
-            }
+            };
         }
 
 
         function loadDefault() {
-            vm.homeState = "basic-template";
+            vm.homeState = $state.current.name;
+
+            // prevent reload page => make change root state
+            if (vm.homeState.indexOf('.') > 0) {
+                vm.homeState = vm.homeState.split('.')[0];
+            }
 
             vm.list = {
                 isEnable: true,
-                choices: [
-                    {
-                        title: 'Basic information',
+                choices: [{
+                        title: 'Information',
                         subTitle: 'Overview of what you should know',
                         icon: 'person',
-                        state: 'basic-template.info'
+                        state: vm.homeState + '.info'
                     },
                     {
-                        title: 'Photo Album',
+                        title: 'Photos',
                         subTitle: 'Album contain all photo of reciever',
                         icon: 'photo_library',
-                        state: 'basic-template.photo'
+                        state: vm.homeState + '.photo'
                     },
                     {
-                        title: 'Favorite Songs',
+                        title: 'Songs',
                         subTitle: 'All favorite songs and their playlist',
                         icon: 'library_music',
-                        state: 'basic-template.song'
+                        state: vm.homeState + '.song'
                     }
                 ]
             };

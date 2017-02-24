@@ -27,7 +27,6 @@
                 isEnable: true,
                 title: 'About Person',
                 textColor: '#FFFFFF',
-                barColor: 'blue',
                 backgroundColor: 'white'
             };
         }

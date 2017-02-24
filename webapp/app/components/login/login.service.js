@@ -26,7 +26,7 @@
                     clickOutsideToClose: true,
                     fullscreen: false
                 });
-            }
+            };
         }
 
         function close() {

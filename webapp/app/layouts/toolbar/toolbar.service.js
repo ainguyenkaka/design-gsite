@@ -13,14 +13,14 @@
         function getService($mdSidenav) {
 
             return {
-                toggleSidenav : toggleSidenav
-            }
+                toggleSidenav: toggleSidenav
+            };
 
             function toggleSidenav() {
                 return function () {
-                   return $mdSidenav('sidenav')
+                    return $mdSidenav('sidenav')
                         .toggle();
-                }
+                };
             }
         }
 

@@ -19,6 +19,7 @@
         vm.customizeFooter = customizeFooter;
         vm.customizeBasicInfo = customizeBasicInfo;
         vm.customizeSong = customizeSong;
+        vm.customizePhoto = customizePhoto;
         
         vm.website = entity;
 
@@ -84,6 +85,15 @@
                 var templateUrl = 'app/web-modules/m-song/m-song-dialog.html';
                 var controller = 'MSongDialogController';
                 var entity = vm.website.custom.song;
+                customDialog(templateUrl, controller, entity);
+            }
+        }
+
+        function customizePhoto() {
+            if(vm.website.custom.photo.isEnable){
+                var templateUrl = 'app/web-modules/m-photo/m-photo-dialog.html';
+                var controller = 'MPhotoDialogController';
+                var entity = vm.website.custom.photo;
                 customDialog(templateUrl, controller, entity);
             }
         }

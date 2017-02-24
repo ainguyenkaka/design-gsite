@@ -12,6 +12,6 @@
         
         vm.toggleSidenav = ToolbarService.toggleSidenav();
         vm.showLoginDialog = LoginService.open();
-        
+
     }
 })();

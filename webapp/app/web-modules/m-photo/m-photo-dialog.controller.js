@@ -11,15 +11,23 @@
         var vm = this;
 
         vm.photo = entity;
-        if (vm.photo == null)
-            loadDefault();
 
+        vm.submit = submit;
+        vm.deleteItem = deleteItem;
 
-        function loadDefault() {
-            vm.photo = {
-                title: 'best photo',
-                url: 'content/images/content/images/photos/kaka-photo.jpg'
-            };
+        vm.stream = 'url';
+
+        function submit() {
+            if (getIndex(vm.item) < 0)
+                vm.photo.items.push(vm.item);
+        }
+
+        function getIndex(choice) {
+            return vm.photo.items.indexOf(vm.item);
+        }
+
+        function deleteItem(index) {
+            vm.photo.items.splice(index, 1);
         }
     }
 })();

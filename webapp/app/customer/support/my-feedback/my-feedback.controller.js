@@ -10,8 +10,6 @@
     function MyFeedbackController ($scope,MyFeedbackService) {
         var vm = this;
 
-        vm.currentState = 'my-feedback';
-
         vm.feedbacks = [];
         
         vm.feedbacks = MyFeedbackService.all();

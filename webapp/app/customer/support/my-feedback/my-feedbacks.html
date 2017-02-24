@@ -1,16 +1,6 @@
-<div class="m-menu-panel">
-</div>
-<div ng-cloak>
-  <md-content>
-    <md-nav-bar md-selected-nav-item="vm.currentState" nav-bar-aria-label="navigation links">
-      <md-nav-item ui-sref="my-question" md-nav-click="goto(my-question)" name="my-question">Question</md-nav-item>
-      <md-nav-item ui-sref="my-feedback" md-nav-click="goto(my-feedback)" name="my-feedback">Feedback</md-nav-item>
-    </md-nav-bar>
-  </md-content>
-</div>
-<div layout-padding>
-    <md-list class="md-dense m-panel" flex md-whiteframe="1">
-        <md-list-item class="md-3-line" ng-repeat="item in vm.feedbacks">
+<div class="m-feedbacks" layout-padding layout-gt-sm="row" layout-align-gt-sm="center center">
+    <md-list class="md-dense m-common-panel" md-whiteframe="1">
+        <md-list-item class="md-3-line " ng-repeat="item in vm.feedbacks">
             <div class="md-list-item-text">
                 <p>
                     <md-icon class="material-icons">feedback</md-icon>
