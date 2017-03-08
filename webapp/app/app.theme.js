@@ -10,7 +10,7 @@
     function themeConfig($mdThemingProvider) {
         $mdThemingProvider.theme('input')
             .primaryPalette('pink')
-            .dark();             // <----- Note
+            .dark();             
     }
 
 })();

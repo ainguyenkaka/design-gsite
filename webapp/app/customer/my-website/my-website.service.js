@@ -15,8 +15,7 @@
             add: add
         };
 
-        var list = [
-            {
+        var list = [{
                 id: 'sas42sa',
                 name: 'Kaká site',
                 des: 'If you guys want to know more about the football player Kaka. Just one click',

@@ -36,28 +36,6 @@
             if (vm.homeState.indexOf('.') > 0) {
                 vm.homeState = vm.homeState.split('.')[0];
             }
-            vm.list = {
-                isEnable: true,
-                choices: [{
-                        title: 'Information',
-                        subTitle: 'Overview of what you should know',
-                        icon: 'person',
-                        state: vm.homeState + '.info'
-                    },
-                    {
-                        title: 'Photos',
-                        subTitle: 'Album contain all photo of reciever',
-                        icon: 'photo_library',
-                        state: vm.homeState + '.photo'
-                    },
-                    {
-                        title: 'Songs',
-                        subTitle: 'All favorite songs and their playlist',
-                        icon: 'library_music',
-                        state: vm.homeState + '.song'
-                    }
-                ]
-            };
         }
     }
 })();
